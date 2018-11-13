@@ -42,6 +42,7 @@
 	
 	
 	<properties>
+		<spring.boot.version>1.5.1.RELEASE</spring.boot.version>
 		<spring.version>4.3.9.RELEASE</spring.version>
 		<shiro.version>1.2.3</shiro.version>
 		<jackson.version>2.2.3</jackson.version>
@@ -50,11 +51,12 @@
 	
 	<dependencies>
 
-		<!-- Spring Boot Web 依赖 -->
-		<!--<dependency>
+		<!-- Spring Boot 依赖 -->
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>-->
+			<artifactId>spring-boot-starter</artifactId>
+			<version>${spring.boot.version}</version>
+		</dependency>
 
 		<!-- spring相关包 -->
 		<dependency>
@@ -307,6 +309,7 @@
 				<includes>
 					<include>**/*.properties</include>
 					<include>**/*.xml</include>
+					<include>**/*.factories</include>
 				</includes>
 				<filtering>false</filtering>
 			</resource>

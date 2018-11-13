@@ -1,10 +1,12 @@
 package com.bamboo.demo1;
 
+import com.bamboo.common.autoconfigure.bamboo.BambooServer;
 import com.bamboo.common.config.CorsConfig;
 import com.bamboo.common.config.LogFilter;
 import com.bamboo.common.utils.DateUtils;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Import;
@@ -21,8 +23,10 @@ public class DemoApplication {
 		SpringApplication.run(DemoApplication.class, args);
 	}
 
+	@Autowired
+	private BambooServer bambooServer;//自定义autoconfig服务
 	@RequestMapping("/")
 	public Object index(){
-		return "helll demo"+DateUtils.getDate();
+		return "helll demo"+bambooServer.getName()+DateUtils.getDate();
 	}
 }
