@@ -17,7 +17,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 @EnableConfigurationProperties(BambooServerProperties.class)
-@ConditionalOnClass(BambooServer.class)//判断BambooServer这个类在类路径中是否存在
+@ConditionalOnClass(BambooServer.class)//判断BambooServer这个类在类路径中是否存在,当存在时创建
 @ConditionalOnProperty(prefix = "bamboo",value = "enabled",matchIfMissing = true)
 public class BmbooServiceAutoConfiguration {
 
@@ -25,7 +25,7 @@ public class BmbooServiceAutoConfiguration {
     private BambooServerProperties mistraServiceProperties;
 
     @Bean(name = "bambooServer")
-    @ConditionalOnMissingBean(BambooServer.class)//当容器中没有这个Bean时(BambooServer)就自动配置这个Bean，Bean的参数来自于BambooServerProperties
+    @ConditionalOnMissingBean(BambooServer.class)//当容器中没有这个Bean实例时(BambooServer)就自动配置这个Bean，Bean的参数来自于BambooServerProperties
     public BambooServer mistraService(){
         BambooServer mistraService = new BambooServer();
         mistraService.setName(mistraServiceProperties.getName());

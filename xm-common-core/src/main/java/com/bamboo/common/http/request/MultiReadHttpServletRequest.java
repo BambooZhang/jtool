@@ -2,7 +2,7 @@ package com.bamboo.common.http.request;
 
 
 
-import com.bamboo.common.utils.IoTools;
+import com.bamboo.common.util.IoTools;
 
 import javax.servlet.ReadListener;
 import javax.servlet.ServletInputStream;

@@ -1,9 +1,9 @@
 package com.bamboo.common.config;
 
 
-import com.bamboo.common.exception.YfException;
+import com.bamboo.common.exception.GlobException;
 import com.bamboo.common.http.request.MultiReadHttpServletRequest;
-import com.bamboo.common.utils.IoTools;
+import com.bamboo.common.util.IoTools;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.NamedThreadLocal;
@@ -14,7 +14,6 @@ import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.util.Map;
 
 //import javax.servlet.annotation.WebFilter;
@@ -50,7 +49,7 @@ public class LogFilter implements Filter {
         try {
             filterChain.doFilter(multiReadRequest, servletResponse);
         } catch (RuntimeException e) {
-            if(e instanceof YfException){//如果是你定义的业务异常
+            if(e instanceof GlobException){//如果是你定义的业务异常
                 System.out.println(e.toString());
             }
             e.printStackTrace();

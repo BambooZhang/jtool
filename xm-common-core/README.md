@@ -49,3 +49,22 @@ public class DemoApplication {
 ```
 
 import 实现可跨域和日志请求拦截处理
+
+
+
+redis配置
+```
+
+    redis:
+        host: localhost
+        port: 6379
+        timeout: 2000
+        password: redis
+        database: 0
+        timeout: 2000
+        maxIdle: 10
+        maxTotal: 100
+        
+
+```
+个别属性如果不配置默认和上面一样,password默认是空值
