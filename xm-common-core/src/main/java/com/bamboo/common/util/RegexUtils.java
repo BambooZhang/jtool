@@ -49,6 +49,10 @@ public class RegexUtils {
      * 正则表达式：验证IP地址
      */
     public static final String REGEX_IP_ADDR = "(25[0-5]|2[0-4]\\d|[0-1]\\d{2}|[1-9]?\\d)";
+    /**
+     * 正则表达式：验证银行卡号
+     */
+    public static final String REGEX_BANK_NO = "^([1-9]{1})(\\d{14}|\\d{18})$";
 
     /*********
      * 正则匹配检查
@@ -67,6 +71,6 @@ public class RegexUtils {
 
 
     public static void main(String args []) {
-        System.out.println(matcher(REGEX_MOBILE, "18129812711"));
+        System.out.println(matcher("^[a-zA-Z,\u4e00-\u9fa5]{2,30}$", "中国该1"));
     }
 }
