@@ -1,4 +1,4 @@
-package com.bamboo.common.util;
+﻿package com.bamboo.common.util;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -52,7 +52,7 @@ public class RegexUtils {
     /**
      * 正则表达式：验证银行卡号
      */
-    public static final String REGEX_BANK_NO = "^([1-9]{1})(\\d{14}|\\d{18})$";
+    public static final String REGEX_BANK_NO = "^([1-9]{1})(\\d{14,18})$";
 
     /*********
      * 正则匹配检查
